@@ -29,12 +29,25 @@ public class Producer {
         //3.通过connection创建一个channel
         Channel channel = connection.createChannel();
 
-        //4.通过channel发送数据
-        String msg = "Hello RabbitMQ!";
 
-        for (int i = 0; i < 5; i++) {
-            channel.basicPublish("","test_01",null,msg.getBytes());
-        }
+        //4.声明
+//        String exchangerName = "test_direct_exchange";
+//        String routingKey = "test.direct";
+
+        String exchangerName = "test_topic_exchange";
+        String routingKey = "user.topic";
+        String routingKey1 = "user.topic.test";
+        String routingKey2 = "user.666";
+
+        //4.通过channel发送数据
+        String msg = "Hello RabbitMQ! user.topic";
+        String msg1 = "Hello RabbitMQ! user.topic.test";
+        String msg2 = "Hello RabbitMQ! user.topic.666";
+//        for (int i = 0; i < 5; i++) {
+        channel.basicPublish(exchangerName,routingKey,null,msg.getBytes());
+        channel.basicPublish(exchangerName,routingKey1,null,msg1.getBytes());
+        channel.basicPublish(exchangerName,routingKey2,null,msg2.getBytes());
+//        }
 
         //5.关闭相关连接
         channel.close();
