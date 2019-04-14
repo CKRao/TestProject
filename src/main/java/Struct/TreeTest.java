@@ -10,6 +10,10 @@ import java.util.concurrent.ArrayBlockingQueue;
 public class TreeTest {
 
 
+    /**
+     * 初始化一个二叉树
+     * @return
+     */
     private static Node initTree() {
         //设置节点值
         Node node = new Node();
@@ -77,20 +81,25 @@ public class TreeTest {
             //6.将自己的子节点放进队列并弹出自己同时打印
             Node take = queue.take();
             System.out.print("-" + take.val);
-            //如果子节点不为空则将其放进队列
+            //7.如果子节点不为空则将其放进队列
             if (take.leftNode != null) {
+                //将当前子节点放进队列
                 queue.put(take.leftNode);
+                //将当前子节点指向下一行的最右节点
                 nextLast = take.leftNode;
             }
             if (take.rightNode != null) {
+                //将当前子节点放进队列
                 queue.put(take.rightNode);
+                //将当前子节点指向下一行的最右节点
                 nextLast = take.rightNode;
             }
-
+            //8.如果当前已打印节点为当前行最后一个节点
             if (last == take) {
-                last = nextLast;
                 //打印换行符
                 System.out.println("--");
+                //将下一行的最后一个节点设置为当前行节点
+                last = nextLast;
             }
         }
     }
