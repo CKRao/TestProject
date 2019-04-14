@@ -1,10 +1,13 @@
 package rabbitmq;
 
+import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
 /**
@@ -29,7 +32,18 @@ public class Producer {
         //3.通过connection创建一个channel
         Channel channel = connection.createChannel();
 
+        Map<String, Object> headers = new HashMap<String, Object>();
 
+        headers.put("my1", "111");
+        headers.put("my2", "222");
+
+        AMQP.BasicProperties properties = new AMQP.BasicProperties.Builder()
+                .deliveryMode(2)
+                .contentEncoding("UTF-8")
+                .contentType("text/plain")
+                .expiration("10000")
+                .headers(headers)
+                .build();
         //4.声明
 //        String exchangerName = "test_direct_exchange";
 //        String routingKey = "test.direct";
@@ -44,9 +58,9 @@ public class Producer {
         String msg1 = "Hello RabbitMQ! user.topic.test";
         String msg2 = "Hello RabbitMQ! user.topic.666";
 //        for (int i = 0; i < 5; i++) {
-        channel.basicPublish(exchangerName,routingKey,null,msg.getBytes());
-        channel.basicPublish(exchangerName,routingKey1,null,msg1.getBytes());
-        channel.basicPublish(exchangerName,routingKey2,null,msg2.getBytes());
+        channel.basicPublish(exchangerName,routingKey,properties,msg.getBytes());
+        channel.basicPublish(exchangerName,routingKey1,properties,msg1.getBytes());
+        channel.basicPublish(exchangerName,routingKey2,properties,msg2.getBytes());
 //        }
 
         //5.关闭相关连接
