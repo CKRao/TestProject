@@ -31,10 +31,10 @@ public class Consumer2 {
         final Channel channel = connection.createChannel();
 
         //4.声明
-        String exchangerName = "test_topic_exchange";
-        String routingKey = "user.#";
-        String queuqName = "test_topic_queue";
-        String exchangetype = "topic";
+        String exchangerName = "test_fanout_exchange";
+        String routingKey = "user.*";
+        String queuqName = "test_fanout_queue";
+        String exchangetype = "fanout";
 
         channel.exchangeDeclare(exchangerName, exchangetype, true, false, false, null);
         channel.queueDeclare(queuqName, false, false, false, null);

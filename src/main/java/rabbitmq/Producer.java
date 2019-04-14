@@ -34,10 +34,10 @@ public class Producer {
 //        String exchangerName = "test_direct_exchange";
 //        String routingKey = "test.direct";
 
-        String exchangerName = "test_topic_exchange";
-        String routingKey = "user.topic";
-        String routingKey1 = "user.topic.test";
-        String routingKey2 = "user.666";
+        String exchangerName = "test_fanout_exchange";
+        String routingKey = "user.topicsss";
+        String routingKey1 = "user.sstopic.testsss";
+        String routingKey2 = "user.sss";
 
         //4.通过channel发送数据
         String msg = "Hello RabbitMQ! user.topic";
