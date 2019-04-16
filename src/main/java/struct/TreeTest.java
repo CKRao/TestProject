@@ -1,4 +1,4 @@
-package Struct;
+package struct;
 
 import java.util.concurrent.ArrayBlockingQueue;
 
