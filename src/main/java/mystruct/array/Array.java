@@ -91,12 +91,53 @@ public class Array {
             throw new IllegalArgumentException("AddLast failed. Require index < 0 || index > size.");
         }
         //循环向后移元素
-        for (int i = size - 1; i >= index; i++) {
-            data[i + 1] = data[1];
+        for (int i = size - 1; i >= index; i--) {
+            data[i + 1] = data[i];
         }
         //将元素e放置到index位置
         data[index] = e;
 
         size++;
+    }
+
+    /**
+     * 获取index索引位置的元素
+     * @param index
+     * @return
+     */
+    public int get(int index) {
+        return data[index];
+    }
+
+    /**
+     * 修改index索引位置的元素为e
+     * @param index
+     * @param e
+     */
+    public void set(int index, int e) {
+        if (index < 0 || index > size) {
+            log.error("AddLast failed. Array is full.");
+            throw new IllegalArgumentException("AddLast failed. Require index < 0 || index > size.");
+        }
+
+        data[index] = e;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder res = new StringBuilder();
+        res.append(String.format("Array:size = %d，Capacity = %d，", size, data.length));
+        res.append("[");
+
+        for (int i = 0; i < size; i++) {
+            res.append(data[i]);
+
+            if (i != size - 1) {
+                res.append(",");
+            }
+        };
+
+        res.append("]");
+        return res.toString();
     }
 }
