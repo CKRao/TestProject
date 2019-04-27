@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa3f46f8-b760-4f5b-9994-94e997b24da7" name="Default" comment="thread test">
-      <change afterPath="$PROJECT_DIR$/src/main/java/threadtest/AwaitSignalTest.java" afterDir="false" />
+    <list default="true" id="fa3f46f8-b760-4f5b-9994-94e997b24da7" name="Default" comment="AwaitSignalTest">
+      <change afterPath="$PROJECT_DIR$/src/main/java/threadtest/CountDownLatchTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,13 +27,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/AwaitSignalTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+            <state relative-caret-position="411">
+              <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/CountDownLatchTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="960">
+              <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#725#726#0" expanded="true" />
+                <element signature="e#767#768#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,6 +87,7 @@
         <option value="$PROJECT_DIR$/src/main/java/util/IOUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/threadtest/ThreadTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/threadtest/AwaitSignalTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/threadtest/CountDownLatchTest.java" />
       </list>
     </option>
   </component>
@@ -170,12 +185,12 @@
     <property name="GO_FMT" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556377472680" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556379564516" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -189,7 +204,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AwaitSignalTest">
+  <component name="RunManager" selected="Application.CountDownLatchTest">
     <configuration name="AwaitSignalTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="threadtest.AwaitSignalTest" />
       <module name="TestProject" />
@@ -204,13 +219,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Consumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="rabbitmq.Consumer" />
-      <module name="test" />
+    <configuration name="CountDownLatchTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="threadtest.CountDownLatchTest" />
+      <module name="TestProject" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="rabbitmq.*" />
+          <option name="PATTERN" value="threadtest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -275,19 +290,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Consumer" />
       <item itemvalue="Application.MainTest" />
       <item itemvalue="Application.IOUtil" />
       <item itemvalue="Application.ThreadTest" />
       <item itemvalue="Application.AwaitSignalTest" />
+      <item itemvalue="Application.CountDownLatchTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CountDownLatchTest" />
         <item itemvalue="Application.AwaitSignalTest" />
         <item itemvalue="Application.ThreadTest" />
         <item itemvalue="Application.IOUtil" />
         <item itemvalue="Application.MainTest" />
-        <item itemvalue="Application.Consumer" />
       </list>
     </recent_temporary>
   </component>
@@ -310,7 +325,7 @@
       <workItem from="1555855364383" duration="3918000" />
       <workItem from="1556030235832" duration="1066000" />
       <workItem from="1556031350644" duration="995000" />
-      <workItem from="1556376577504" duration="680000" />
+      <workItem from="1556376577504" duration="2756000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1555230731638</created>
@@ -389,15 +404,21 @@
       <option name="project" value="LOCAL" />
       <updated>1556031563748</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="AwaitSignalTest">
+      <created>1556377481185</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1556377481185</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25019000" />
+    <option name="totallyTimeSpent" value="27095000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1080" height="1892" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.22093023" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -408,7 +429,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35277462" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.499031" visible="true" weight="0.35277462" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31303358" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -417,7 +438,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32899207" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.4943375" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.500969" side_tool="true" weight="0.35277462" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32899207" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -441,7 +462,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35277462" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.499031" visible="true" weight="0.35277462" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31303358" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -450,7 +471,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32899207" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.4943375" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.500969" side_tool="true" weight="0.35277462" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32899207" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -518,7 +539,8 @@
     <MESSAGE value="MyArray" />
     <MESSAGE value="test" />
     <MESSAGE value="thread test" />
-    <option name="LAST_COMMIT_MESSAGE" value="thread test" />
+    <MESSAGE value="AwaitSignalTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="AwaitSignalTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -671,10 +693,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/AwaitSignalTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+        <state relative-caret-position="411">
+          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/CountDownLatchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+            <element signature="e#767#768#0" expanded="true" />
           </folding>
         </state>
       </provider>
