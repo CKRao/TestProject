@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa3f46f8-b760-4f5b-9994-94e997b24da7" name="Default" comment="AwaitSignalTest">
+    <list default="true" id="fa3f46f8-b760-4f5b-9994-94e997b24da7" name="Default" comment="CountDownLatchTest">
       <change afterPath="$PROJECT_DIR$/src/main/java/threadtest/CountDownLatchTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/threadtest/CyclicBarrierTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/threadtest/SemaphoreTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,7 +20,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/ThreadTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
+            <state relative-caret-position="660">
               <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -30,8 +32,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/AwaitSignalTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+            <state relative-caret-position="440">
+              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/CountDownLatchTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="491">
+              <caret line="26" column="23" selection-start-line="26" selection-end-line="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/CyclicBarrierTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,14 +66,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/CountDownLatchTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/SemaphoreTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+            <state relative-caret-position="360">
+              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#725#726#0" expanded="true" />
-                <element signature="e#767#768#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,6 +112,8 @@
         <option value="$PROJECT_DIR$/src/main/java/threadtest/ThreadTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/threadtest/AwaitSignalTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/threadtest/CountDownLatchTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/threadtest/CyclicBarrierTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/threadtest/SemaphoreTest.java" />
       </list>
     </option>
   </component>
@@ -128,7 +154,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,19 +204,19 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GO_FMT" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556379564516" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556381018830" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="GrepConsole" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -233,13 +259,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IOUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="util.IOUtil" />
+    <configuration name="CyclicBarrierTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="threadtest.CyclicBarrierTest" />
       <module name="TestProject" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="util.*" />
+          <option name="PATTERN" value="threadtest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -247,9 +273,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
+    <configuration name="SemaphoreTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="threadtest.SemaphoreTest" />
       <module name="TestProject" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="threadtest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -290,19 +323,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MainTest" />
-      <item itemvalue="Application.IOUtil" />
       <item itemvalue="Application.ThreadTest" />
       <item itemvalue="Application.AwaitSignalTest" />
       <item itemvalue="Application.CountDownLatchTest" />
+      <item itemvalue="Application.CyclicBarrierTest" />
+      <item itemvalue="Application.SemaphoreTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.CountDownLatchTest" />
+        <item itemvalue="Application.SemaphoreTest" />
+        <item itemvalue="Application.CyclicBarrierTest" />
         <item itemvalue="Application.AwaitSignalTest" />
         <item itemvalue="Application.ThreadTest" />
-        <item itemvalue="Application.IOUtil" />
-        <item itemvalue="Application.MainTest" />
       </list>
     </recent_temporary>
   </component>
@@ -326,6 +359,7 @@
       <workItem from="1556030235832" duration="1066000" />
       <workItem from="1556031350644" duration="995000" />
       <workItem from="1556376577504" duration="2756000" />
+      <workItem from="1556379472444" duration="1394000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1555230731638</created>
@@ -411,14 +445,22 @@
       <option name="project" value="LOCAL" />
       <updated>1556377481185</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="CountDownLatchTest">
+      <created>1556379568174</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556379568175</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27095000" />
+    <option name="totallyTimeSpent" value="28489000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1080" height="1892" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.22093023" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -429,7 +471,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.499031" visible="true" weight="0.35277462" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.499031" weight="0.35277462" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31303358" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -453,7 +495,7 @@
       <window_info anchor="right" id="Maven" order="9" weight="0.32945737" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22093023" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22093023" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -540,7 +582,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="thread test" />
     <MESSAGE value="AwaitSignalTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="AwaitSignalTest" />
+    <MESSAGE value="CountDownLatchTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="CountDownLatchTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -683,7 +726,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/ThreadTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="660">
           <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -693,22 +736,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/AwaitSignalTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        <state relative-caret-position="440">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/local/jdk1.8/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="969" column="23" selection-start-line="969" selection-start-column="23" selection-end-line="969" selection-end-column="23" />
+          <folding>
+            <element signature="e#40171#40172#0" expanded="true" />
+            <element signature="e#40220#40221#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/CountDownLatchTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+        <state relative-caret-position="491">
+          <caret line="26" column="23" selection-start-line="26" selection-end-line="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#767#768#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/CyclicBarrierTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/threadtest/SemaphoreTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
