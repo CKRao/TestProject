@@ -9,7 +9,7 @@ import mystruct.array.Array;
 @Slf4j
 public class MainTest {
     public static void main(String[] args) {
-       log.info("-------Test Start-------");
+        log.info("-------Test Start-------");
         Array arr = new Array(20);
 
         for (int i = 0; i < 10; i++) {
@@ -20,7 +20,7 @@ public class MainTest {
 
         log.info("-----add-----");
 
-        arr.add(1,100);
+        arr.add(1, 100);
         arr.addFirst(-1);
         log.info(arr.toString());
 
