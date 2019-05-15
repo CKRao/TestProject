@@ -25,8 +25,12 @@ public class FutureTaskTest {
 
 
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
-                2, 5,
-                2, TimeUnit.MINUTES, new LinkedBlockingDeque<>(1024), r -> {
+                2,
+                5,
+                2,
+                TimeUnit.MINUTES,
+                new LinkedBlockingDeque<>(1024),
+                r -> {
                     Thread thread = new Thread(r);
                     thread.setName("my-Thread");
                     return thread;
