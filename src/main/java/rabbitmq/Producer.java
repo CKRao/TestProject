@@ -53,14 +53,39 @@ public class Producer {
         String routingKey1 = "user.sstopic.testsss";
         String routingKey2 = "user.sss";
 
+        channel.confirmSelect();
         //4.通过channel发送数据
         String msg = "Hello RabbitMQ! user.topic";
         String msg1 = "Hello RabbitMQ! user.topic.test";
         String msg2 = "Hello RabbitMQ! user.topic.666";
 //        for (int i = 0; i < 5; i++) {
         channel.basicPublish(exchangerName,routingKey,properties,msg.getBytes());
+        try {
+            if (!channel.waitForConfirms()) {
+                System.out.println("send message failed");
+                //do something else...
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         channel.basicPublish(exchangerName,routingKey1,properties,msg1.getBytes());
+        try {
+            if (!channel.waitForConfirms()) {
+                System.out.println("send message failed");
+                //do something else...
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         channel.basicPublish(exchangerName,routingKey2,properties,msg2.getBytes());
+        try {
+            if (!channel.waitForConfirms()) {
+                System.out.println("send message failed");
+                //do something else...
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 //        }
 
         //5.关闭相关连接
