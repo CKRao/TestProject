@@ -1,7 +1,9 @@
 import entity.Country;
+import entity.SysUser;
 import junit.framework.Assert;
 import lombok.extern.slf4j.Slf4j;
 import mapper.CountryMapper;
+import mapper.UserMapper;
 import mystruct.array.Array;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -10,6 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.List;
 
 /**
  * @Author: ClarkRao
@@ -25,17 +28,22 @@ public class MainTest {
         try(Reader reader = Resources.getResourceAsReader("mybatis-config.xml")) {
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 
+            //在mybatis-config.xml 配置了事务管理器，则需要在开启会话的时候设置自动提交
+            //如果使用了无参构造器，则需要在插入和更新操作后，手动sqlSession.commit()
             SqlSession sqlSession = sqlSessionFactory.openSession(true);
-            Country country = new Country();
-            country.setCountryName("China");
-            country.setCountryCode("CN");
 
-            CountryMapper countryMapper = sqlSession.getMapper(CountryMapper.class);
-            int i = countryMapper.insertOne(country);
-//            sqlSession.commit();
-            Assert.assertEquals(1,i);
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-            System.out.println(countryMapper.selectOne(2L));
+            //查找id为1的用户
+            SysUser sysUser = userMapper.selectById(1L);
+
+            log.info("sysUser ： {}",sysUser);
+
+            //查找所有的用户
+            List<SysUser> sysUsers = userMapper.selectAll();
+
+            sysUsers.forEach(System.out::println);
+
             sqlSession.close();
         } catch (IOException e) {
             e.printStackTrace();

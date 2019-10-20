@@ -20,6 +20,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mapper/CountryMapper.xml"/>
+<!--        <mapper resource="mapper/CountryMapper.xml"/>-->
+        <package name="mapper"/>
     </mappers>
 </configuration>
