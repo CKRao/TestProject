@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace命名空间，做sql隔离，防止命名重复 -->
+<mapper namespace="mapper.CountryMapper">
+    <resultMap id="countryMap" type="Country">
+        <id property="id" column="id"/>
+        <result property="countryName" column="country_name"/>
+        <result property="countryCode" column="country_code"/>
+    </resultMap>
+    <select id="selectOne" resultMap="countryMap">
+        SELECT id,country_name,country_code FROM country WHERE id=#{id}
+    </select>
+
+    <insert id="insertOne" parameterType="Country" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO country(
+            country_name,country_code
+        )
+        VALUES(#{countryName},#{countryCode})
+    </insert>
+</mapper>
