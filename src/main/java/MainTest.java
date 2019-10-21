@@ -1,6 +1,5 @@
 import entity.Country;
 import entity.SysUser;
-import junit.framework.Assert;
 import lombok.extern.slf4j.Slf4j;
 import mapper.CountryMapper;
 import mapper.UserMapper;

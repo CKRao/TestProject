@@ -22,4 +22,50 @@
     <select id="selectAll" resultMap="userMap">
         SELECT * FROM sys_user
     </select>
+
+    <!--根据用户id查找用户角色列表-->
+    <select id="selectRolesByUserId" resultType="SysRole">
+        SELECT
+            r.id,
+            r.role_name roleName,
+            r.enabled,
+            r.create_by createBy,
+            r.create_time createTime
+        FROM sys_user u
+        INNER JOIN sys_user_role ur on u.id = ur.user_id
+        INNER JOIN sys_role r on ur.role_id = r.id
+        WHERE u.id = #{userId}
+    </select>
+
+    <!--根据用户id查找用户角色列表 resultType="SysRoleExtend" 通过SysRoleExtend扩展角色对象，增加用户名和用户邮箱的值的接收-->
+    <select id="selectRolesByUserId2" resultType="SysRoleExtend">
+        SELECT
+        r.id,
+        r.role_name roleName,
+        r.enabled,
+        r.create_by createBy,
+        r.create_time createTime,
+        u.user_name userName,
+        u.user_email userEmail
+        FROM sys_user u
+        INNER JOIN sys_user_role ur on u.id = ur.user_id
+        INNER JOIN sys_role r on ur.role_id = r.id
+        WHERE u.id = #{userId}
+    </select>
+
+    <!--根据用户id查找用户角色列表 SysRole中增加SysUser作为属性，以此来接收额外的用户信息返回值 增加用户名和用户邮箱的值的接收-->
+    <select id="selectRolesByUserId3" resultType="SysRole">
+        SELECT
+        r.id,
+        r.role_name roleName,
+        r.enabled,
+        r.create_by createBy,
+        r.create_time createTime,
+        u.user_name "user.userName",
+        u.user_email "user.userEmail"
+        FROM sys_user u
+        INNER JOIN sys_user_role ur on u.id = ur.user_id
+        INNER JOIN sys_role r on ur.role_id = r.id
+        WHERE u.id = #{userId}
+    </select>
 </mapper>

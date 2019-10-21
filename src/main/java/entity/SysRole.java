@@ -35,4 +35,9 @@ public class SysRole {
      * 创建时间
      */
     private Date createTime;
+
+    /**
+     * SysUser用户对象，查询时可用来接收用户信息额外的值
+     */
+    private SysUser user;
 }

@@ -1,6 +1,8 @@
 package mapper;
 
+import entity.SysRole;
 import entity.SysUser;
+import entity.model.SysRoleExtend;
 
 import java.util.List;
 
@@ -23,4 +25,27 @@ public interface UserMapper {
      * @return
      */
     List<SysUser> selectAll();
+
+    /**
+     * 根据UserId查找角色
+     * @param userId
+     * @return
+     */
+    List<SysRole> selectRolesByUserId(Long userId);
+
+
+    /**
+     * 根据UserId查找角色
+     * 通过SysRoleExtend扩展角色对象，增加用户名和用户邮箱的值得接收
+     * @param userId
+     * @return
+     */
+    List<SysRoleExtend> selectRolesByUserId2(Long userId);
+
+    /**
+     * 根据UserId查找角色 SysRole中增加SysUser作为属性，以此来接收额外的用户信息返回值
+     * @param userId
+     * @return
+     */
+    List<SysRole> selectRolesByUserId3(Long userId);
 }
