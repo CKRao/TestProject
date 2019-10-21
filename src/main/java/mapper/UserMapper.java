@@ -48,4 +48,25 @@ public interface UserMapper {
      * @return
      */
     List<SysRole> selectRolesByUserId3(Long userId);
+
+    /**
+     * 插入数据
+     * @param user
+     * @return
+     */
+    int insert(SysUser user);
+
+    /**
+     * 插入数据
+     * @param user
+     * @return
+     */
+    int insert2(SysUser user);
+
+    /**
+     * 插入数据 使用selectKey方式
+     * @param user
+     * @return
+     */
+    int insert3(SysUser user);
 }

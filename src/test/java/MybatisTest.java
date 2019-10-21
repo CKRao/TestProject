@@ -1,4 +1,5 @@
 import entity.SysRole;
+import entity.SysUser;
 import entity.model.SysRoleExtend;
 import lombok.extern.slf4j.Slf4j;
 import mapper.UserMapper;
@@ -8,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import util.MybatisUtil;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -72,6 +74,87 @@ public class MybatisTest {
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
+            sqlSession.close();
+        }
+    }
+
+    @Test
+    public void testInsert() {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            SysUser user = new SysUser();
+            user.setUserName("lalala");
+            user.setUserPassword("123456");
+            user.setUserInfo("测试来了");
+            user.setUserEmail("test@test.com");
+            user.setCreateTime(new Date());
+            user.setHeadImg(new byte[]{1,2,3});
+            int result= userMapper.insert(user);
+            Assert.assertEquals(1,result);
+            Assert.assertNull(user.getId());
+            log.info(user.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            //为了不影响其他测试，选择回滚
+            //由于默认的sqlSessionFactory.openSession()是不自动提交的
+            //因此不手动执行commit也不会提交到数据库
+            sqlSession.rollback();
+            sqlSession.close();
+        }
+    }
+
+    @Test
+    public void testInsert2() {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            SysUser user = new SysUser();
+            user.setUserName("lalala");
+            user.setUserPassword("123456");
+            user.setUserInfo("测试来了");
+            user.setUserEmail("test@test.com");
+            user.setCreateTime(new Date());
+            user.setHeadImg(new byte[]{1,2,3});
+            int result= userMapper.insert2(user);
+            Assert.assertEquals(1,result);
+            Assert.assertNotNull(user.getId());
+            log.info(user.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            //为了不影响其他测试，选择回滚
+            //由于默认的sqlSessionFactory.openSession()是不自动提交的
+            //因此不手动执行commit也不会提交到数据库
+            sqlSession.rollback();
+            sqlSession.close();
+        }
+    }
+
+    @Test
+    public void testInsert3() {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            SysUser user = new SysUser();
+            user.setUserName("lalala");
+            user.setUserPassword("123456");
+            user.setUserInfo("测试来了");
+            user.setUserEmail("test@test.com");
+            user.setCreateTime(new Date());
+            user.setHeadImg(new byte[]{1,2,3});
+            int result= userMapper.insert3(user);
+            Assert.assertEquals(1,result);
+            Assert.assertNotNull(user.getId());
+            log.info(user.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            //为了不影响其他测试，选择回滚
+            //由于默认的sqlSessionFactory.openSession()是不自动提交的
+            //因此不手动执行commit也不会提交到数据库
+            sqlSession.rollback();
             sqlSession.close();
         }
     }
