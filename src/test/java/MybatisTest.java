@@ -158,4 +158,26 @@ public class MybatisTest {
             sqlSession.close();
         }
     }
+
+    @Test
+    public void testSelectByUser() {
+        SqlSession sqlSession = MybatisUtil.getSession();
+        try {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            SysUser sysUser = userMapper.selectByUser("", "test@ck.top");
+
+            Assert.assertNotNull(sysUser);
+            Assert.assertEquals("test@ck.top",sysUser.getUserEmail());
+
+            log.info(sysUser.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            //为了不影响其他测试，选择回滚
+            //由于默认的sqlSessionFactory.openSession()是不自动提交的
+            //因此不手动执行commit也不会提交到数据库
+            sqlSession.rollback();
+            sqlSession.close();
+        }
+    }
 }

@@ -3,6 +3,7 @@ package mapper;
 import entity.SysRole;
 import entity.SysUser;
 import entity.model.SysRoleExtend;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -69,4 +70,26 @@ public interface UserMapper {
      * @return
      */
     int insert3(SysUser user);
+
+    /**
+     * 更新数据
+     * @param user
+     * @return
+     */
+    int updateById(SysUser user);
+
+    /**
+     * 根据id删除记录
+     * @param id
+     * @return
+     */
+    int deleteById(Long id);
+
+    /**
+     * 根据用户信息查找
+     * @param userName
+     * @param userEmail
+     * @return
+     */
+    SysUser selectByUser(@Param("userName") String userName, @Param("userEmail") String userEmail);
 }
