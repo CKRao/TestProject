@@ -1,10 +1,9 @@
 package threadtest;
 
+import io.netty.util.concurrent.DefaultThreadFactory;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 /**
  * @author : ClarkRao
@@ -15,7 +14,12 @@ import java.util.concurrent.Executors;
 public class CountDownLatchTest {
     public static void main(String[] args) {
         final CountDownLatch latch = new CountDownLatch(2);
-        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        DefaultThreadFactory threadFactory = new DefaultThreadFactory("CountDownLatchTest");
+
+        ExecutorService executorService = new ThreadPoolExecutor(2, 2,
+                60L, TimeUnit.SECONDS,
+                new SynchronousQueue<Runnable>(),
+                threadFactory);
 
         executorService.execute(new RunTest(latch));
         executorService.execute(new RunTest(latch));

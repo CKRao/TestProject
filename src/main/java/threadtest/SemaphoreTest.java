@@ -13,19 +13,21 @@ import java.util.concurrent.Semaphore;
 public class SemaphoreTest {
 
     public static void main(String[] args) {
-        final int num = 8; //工人数
-        Semaphore semaphore = new Semaphore(5);//机器数目
+        //工人数
+        final int num = 8;
+        //机器数目
+        Semaphore semaphore = new Semaphore(5);
         for (int i = 0; i < num; i++) {
-            new Woker(i,semaphore).start();
+            new Worker(i,semaphore).start();
         }
     }
 
-    static class Woker extends Thread {
+    static class Worker extends Thread {
         private int num;
         private Semaphore semaphore;
 
 
-        public Woker(int num, Semaphore semaphore) {
+        public Worker(int num, Semaphore semaphore) {
             this.num = num;
             this.semaphore = semaphore;
         }

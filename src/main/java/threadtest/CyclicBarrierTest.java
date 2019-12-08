@@ -1,11 +1,9 @@
 package threadtest;
 
+import io.netty.util.concurrent.DefaultThreadFactory;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 /**
  * @author : ClarkRao
@@ -14,20 +12,23 @@ import java.util.concurrent.Executors;
  */
 @Slf4j
 public class CyclicBarrierTest {
-    public static final int TOTAL_THREAD = 10;
+    private static final int TOTAL_THREAD = 10;
 
     public static void main(String[] args) {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(TOTAL_THREAD);
-        ExecutorService executorService = Executors.newCachedThreadPool();
+        DefaultThreadFactory threadFactory = new DefaultThreadFactory("CyclicBarrierTest");
+
+        ExecutorService executorService = new ThreadPoolExecutor(10, 10,
+                60L, TimeUnit.SECONDS,
+                new SynchronousQueue<Runnable>(),
+                threadFactory);
 
         for (int i = 0; i < 10; i++) {
             executorService.execute(() -> {
                 log.info("Thread :"+ Thread.currentThread().getName() + "before...");
                 try {
                     cyclicBarrier.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (BrokenBarrierException e) {
+                } catch (InterruptedException | BrokenBarrierException e) {
                     e.printStackTrace();
                 }
                 log.info("Thread :"+ Thread.currentThread().getName() + "after...");

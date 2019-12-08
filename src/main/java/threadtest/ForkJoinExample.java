@@ -11,7 +11,6 @@ import java.util.concurrent.*;
  */
 @Slf4j
 public class ForkJoinExample extends RecursiveTask<Integer> {
-    private final int threshold = 5;
     private int first;
     private int last;
 
@@ -23,6 +22,7 @@ public class ForkJoinExample extends RecursiveTask<Integer> {
     @Override
     protected Integer compute() {
         int result = 0;
+        int threshold = 5;
         if ((last - first) <= threshold) {
             //任务量足够小则直接计算
             for (int i = first; i <= last; i++) {
