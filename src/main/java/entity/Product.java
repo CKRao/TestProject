@@ -14,7 +14,7 @@ import java.util.Date;
  */
 
 @Data
-@Builder
+@Builder(toBuilder = true)
 public class Product {
 
     /**

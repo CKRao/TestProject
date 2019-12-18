@@ -20,6 +20,15 @@ public class EntityTest {
                 .categoryId("1")
                 .build();
 
-        log.info(product.toString());
+        log.info("1. {}",product.toString());
+
+        log.info("after toBuilder");
+
+        product = product.toBuilder()
+                .id(1L)
+                .name("product change")
+                .build();
+
+        log.info("2. {}",product.toString());
     }
 }
