@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -29,17 +30,13 @@ public class OtherTest {
             }
         };
 
-        List<Double> doubleList = strings.stream().mapToDouble(str -> {
-            log.info("mapToDouble {}", str);
-            return Double.parseDouble(str);
-        }).filter(item -> {
-            log.info("filter {}", item);
-            if (item > 4) {
-                return true;
-            }
-            return false;
-        }).mapToObj(Double::new).collect(toList());
+        String collectStr = strings.stream()
+                .mapToDouble(Double::parseDouble)
+                .filter(item -> item > 4)
+                .boxed()
+                .map(String::valueOf)
+                .collect(joining(", "));
 
-
+        log.info("collectStr is {}", collectStr);
     }
 }
