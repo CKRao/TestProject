@@ -42,7 +42,7 @@ public class CountDownLatchTest {
 
         private CountDownLatch latch;
 
-        public RunTest(CountDownLatch latch) {
+        RunTest(CountDownLatch latch) {
             this.latch = latch;
         }
 

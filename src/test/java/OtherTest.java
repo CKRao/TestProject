@@ -25,8 +25,6 @@ public class OtherTest {
                 add("4");
                 add("6");
                 add("8");
-                add("8");
-                add("8");
             }
         };
 
@@ -38,5 +36,10 @@ public class OtherTest {
                 .collect(joining(", "));
 
         log.info("collectStr is {}", collectStr);
+
+        //通过下划线增强数字可读性
+        long num = 100_000_00L;
+
+        System.out.println(num);
     }
 }
